@@ -15,5 +15,7 @@ namespace hipagesapi.Data
         }
 
         public DbSet<Jobs> jobs { get; set; }
+        public DbSet<Categories> categories { get; set; }
+        public DbSet<Suburbs> suburbs { get; set; }
     }
 }

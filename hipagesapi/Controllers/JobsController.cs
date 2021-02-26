@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace hipagesapi.Controllers
 {
-    [Route("api/v1/jobs")]
+    [Route("api/v1/jobs/[action]")]
     [ApiController]
     public class JobsController : ControllerBase
     {
@@ -26,12 +26,30 @@ namespace hipagesapi.Controllers
 
         //private readonly MockJobsRepo _repository = new MockJobsRepo();
 
+        //[HttpGet]
+        //public ActionResult<IEnumerable<JobDescriptionDto>> GetAllJobs()
+        //{
+        //    var jobList = _repository.GetAllJobs();
+
+        //    return Ok(_mapper.Map<IEnumerable<JobDescriptionDto>>(jobList));
+
+        //}
+
         [HttpGet]
-        public ActionResult<IEnumerable<JobDescriptionDto>> GetAllJobs()
+        public ActionResult<IEnumerable<JobDetailsDto>> GetAllAvailibleJobs()
         {
             var jobList = _repository.GetAllJobs();
 
-            return Ok(_mapper.Map<IEnumerable<JobDescriptionDto>>(jobList));
+            return Ok(jobList);
+
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<JobDetailsDto>> GetAllJobsAccepted()
+        {
+            var jobList = _repository.GetAllJobsAccepted();
+
+            return Ok(jobList);
 
         }
 

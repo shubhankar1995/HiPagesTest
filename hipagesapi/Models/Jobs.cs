@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,12 +17,16 @@ namespace hipagesapi.Models
         public int Category_id { get; set; }
 
         public string Contact_name { get; set; }
+
         public string Contact_phone { get; set; }
+
         public string Contact_email { get; set; }
 
         public int Price { get; set; }
 
         public string Description { get; set; }
+
+        public DateTime Updated_at { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using hipagesapi.Models;
+﻿using hipagesapi.Dto;
+using hipagesapi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace hipagesapi.Data
     {
 
         bool SaveChanges();
-        IEnumerable<Jobs> GetAllJobs();
+        IEnumerable<JobDetailsDto> GetAllJobs();
+
+        IEnumerable<JobDetailsDto> GetAllJobsAccepted();
         Jobs GetJobsById(int id);
         void UpdateJob(Jobs job);
     }

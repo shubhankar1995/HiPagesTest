@@ -23,6 +23,16 @@ namespace hipagesapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add CORS settings
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("*");
+                    });
+            });
+
             // Create the Database connection
             services.AddDbContext<JobsContext>(opt => opt.UseMySql(Configuration.GetConnectionString("JobsConnection")));
 
@@ -57,6 +67,9 @@ namespace hipagesapi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // Add CORS settings
+            app.UseCors();
 
             app.UseAuthorization();
 

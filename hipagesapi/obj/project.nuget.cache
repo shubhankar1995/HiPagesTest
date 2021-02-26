@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "KU9bNPcJ/jfxicm6QIXX+divZCJmk+eVXlFSJbi5o9AiWRibbVRFvAW3d7fWwh+2nAtGNwP3nyu2crJrxENYuw==",
+  "dgSpecHash": "Qe3TiR+hKbdAqAOUeGKnqGRa6rsWuCzR4iQUqvdL6uZ9mzai4XqrHmWdN7/O/THZj8y3F3YMUtYNh3Noh/cCBg==",
   "success": true,
   "projectFilePath": "D:\\HiPages\\tech-test-full-stack-engineer-master\\tech-test-full-stack-engineer-master\\HiPagesTest\\hipagesapi\\hipagesapi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\shubh\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.12\\microsoft.aspnetcore.authentication.jwtbearer.3.1.12.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.1\\microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.3\\microsoft.aspnetcore.jsonpatch.5.0.3.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.3\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.3.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -33,7 +37,8 @@
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\mysqlconnector\\0.69.9\\mysqlconnector.0.69.9.nupkg.sha512",
-    "C:\\Users\\shubh\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.2.4\\pomelo.entityframeworkcore.mysql.3.2.4.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
@@ -44,6 +49,7 @@
     "C:\\Users\\shubh\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
+    "C:\\Users\\shubh\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\shubh\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []

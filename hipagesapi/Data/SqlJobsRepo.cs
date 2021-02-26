@@ -24,5 +24,15 @@ namespace hipagesapi.Data
         {
             return _context.jobs.FirstOrDefault(p => p.Id == id);
         }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0 );
+        }
+
+        public void UpdateJob(Jobs job)
+        {
+            //Do nothing
+        }
     }
 }

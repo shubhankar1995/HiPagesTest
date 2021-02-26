@@ -1,5 +1,8 @@
-﻿using hipagesapi.Data;
+﻿using AutoMapper;
+using hipagesapi.Data;
+using hipagesapi.Dto;
 using hipagesapi.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,20 +16,22 @@ namespace hipagesapi.Controllers
     public class JobsController : ControllerBase
     {
         private readonly IJobRepo _repository;
+        private readonly IMapper _mapper;
 
-        public JobsController(IJobRepo repository)
+        public JobsController(IJobRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         //private readonly MockJobsRepo _repository = new MockJobsRepo();
 
         [HttpGet]
-        public ActionResult<IEnumerable<Jobs>> GetAllJobs()
+        public ActionResult<IEnumerable<JobDescriptionDto>> GetAllJobs()
         {
             var jobList = _repository.GetAllJobs();
 
-            return Ok(jobList);
+            return Ok(_mapper.Map<IEnumerable<JobDescriptionDto>>(jobList));
 
         }
 
@@ -35,7 +40,32 @@ namespace hipagesapi.Controllers
         {
             var job = _repository.GetJobsById(id);
 
-            return Ok(job);
+            return Ok(_mapper.Map<JobDescriptionDto>(job));
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult UpdateContract(int id, JsonPatchDocument<JobDescriptionDto> patchDoc)
+        {
+            var job = _repository.GetJobsById(id);
+            if (job == null)
+            {
+                return NotFound();
+            }
+            var jobToPatch = _mapper.Map<JobDescriptionDto>(job);
+            patchDoc.ApplyTo(jobToPatch, ModelState);
+
+            if (!TryValidateModel(jobToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(jobToPatch, job);
+
+            _repository.UpdateJob(job);
+
+            _repository.SaveChanges();
+
+            return NoContent();
         }
     }
 }

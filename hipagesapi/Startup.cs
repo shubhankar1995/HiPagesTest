@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 
 namespace hipagesapi
 {
@@ -30,7 +31,11 @@ namespace hipagesapi
         {
             //services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["ConnectionStrings:JobsConnection"]));
             services.AddDbContext<JobsContext>(opt => opt.UseMySql(Configuration.GetConnectionString("JobsConnection")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             //services.AddScoped<IJobRepo, MockJobsRepo>();
             services.AddScoped<IJobRepo, SqlJobsRepo>();
             services.AddSwaggerGen(c =>

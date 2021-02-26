@@ -1,7 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This class has been created to act as a data transfer object
+ *  for the job table mapped with teh categories and suburbs 
+ * 
+ */
+
 
 namespace hipagesapi.Dto
 {

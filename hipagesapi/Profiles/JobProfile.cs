@@ -1,10 +1,14 @@
 ﻿using AutoMapper;
 using hipagesapi.Dto;
 using hipagesapi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This Profile class has been created for auto mapping
+ *  the data transfer objects
+ * 
+ */
+
 
 namespace hipagesapi.Profiles
 {

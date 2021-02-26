@@ -1,8 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This model class has been created for mapping jobs table
+ * 
+ */
+
 
 namespace hipagesapi.Models
 {

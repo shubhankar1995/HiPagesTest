@@ -1,7 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This class has been created to act as a data transfer object
+ *  for the job table 
+ * 
+ */
 
 namespace hipagesapi.Dto
 {
@@ -16,7 +20,9 @@ namespace hipagesapi.Dto
         public int Category_id { get; set; }
 
         public string Contact_name { get; set; }
+
         public string Contact_phone { get; set; }
+
         public string Contact_email { get; set; }
 
         public int Price { get; set; }

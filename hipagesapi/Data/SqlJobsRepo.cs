@@ -1,9 +1,15 @@
 ﻿using hipagesapi.Dto;
 using hipagesapi.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This class is created to implement the database query 
+ *  for retreiving the job details and updating the new status
+ *  of the jobs
+ * 
+ */
 
 namespace hipagesapi.Data
 {
@@ -11,14 +17,16 @@ namespace hipagesapi.Data
     {
         private readonly JobsContext _context;
 
+        // Constructor to initiate the database context
         public SqlJobsRepo(JobsContext context)
         {
             _context = context;
         }
 
+        // Fetch all the jobs which have new status
         public IEnumerable<JobDetailsDto> GetAllJobs()
         {
-            var entryPoint = (from j in _context.jobs
+            var availableJobs = (from j in _context.jobs
                               join c in _context.categories on j.Category_id equals c.Id
                               join s in _context.suburbs on j.Suburb_id equals s.Id
                               where j.Status == "new"
@@ -37,12 +45,13 @@ namespace hipagesapi.Data
                                   Updated_at = j.Updated_at
                               });
 
-            return entryPoint;
+            return availableJobs;
         }
 
+        // Fetch all the jobs which have been accepted
         public IEnumerable<JobDetailsDto> GetAllJobsAccepted()
         {
-            var entryPoint = (from j in _context.jobs
+            var acceptedJobs = (from j in _context.jobs
                               join c in _context.categories on j.Category_id equals c.Id
                               join s in _context.suburbs on j.Suburb_id equals s.Id
                               where j.Status == "accepted"
@@ -61,19 +70,22 @@ namespace hipagesapi.Data
                                   Updated_at = j.Updated_at
                               });
 
-            return entryPoint;
+            return acceptedJobs;
         }
 
+        // Fetch the job which based on the job id
         public Jobs GetJobsById(int id)
         {
             return _context.jobs.FirstOrDefault(p => p.Id == id);
         }
 
+        // Save all the changes which have been made to the database
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0 );
         }
 
+        // Update the status of the job
         public void UpdateJob(Jobs job)
         {
             //Do nothing

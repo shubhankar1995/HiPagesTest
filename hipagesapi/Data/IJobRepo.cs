@@ -1,9 +1,13 @@
 ﻿using hipagesapi.Dto;
 using hipagesapi.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+/**
+ * 
+ *  This repository is created to enforce the operations 
+ *  that have to be implemented to perform on the database 
+ * 
+ */
 
 namespace hipagesapi.Data
 {
@@ -11,10 +15,13 @@ namespace hipagesapi.Data
     {
 
         bool SaveChanges();
+
         IEnumerable<JobDetailsDto> GetAllJobs();
 
         IEnumerable<JobDetailsDto> GetAllJobsAccepted();
+        
         Jobs GetJobsById(int id);
+        
         void UpdateJob(Jobs job);
     }
 }

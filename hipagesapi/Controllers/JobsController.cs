@@ -24,66 +24,99 @@ namespace hipagesapi.Controllers
             _mapper = mapper;
         }
 
-        //private readonly MockJobsRepo _repository = new MockJobsRepo();
-
-        //[HttpGet]
-        //public ActionResult<IEnumerable<JobDescriptionDto>> GetAllJobs()
-        //{
-        //    var jobList = _repository.GetAllJobs();
-
-        //    return Ok(_mapper.Map<IEnumerable<JobDescriptionDto>>(jobList));
-
-        //}
-
         [HttpGet]
         public ActionResult<IEnumerable<JobDetailsDto>> GetAllAvailibleJobs()
         {
-            var jobList = _repository.GetAllJobs();
+            try
+            {
+                var jobList = _repository.GetAllJobs();
 
-            return Ok(jobList);
+                if (jobList == null)
+                {
+                    return NoContent();
+                }
+
+                return Ok(jobList);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
 
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<JobDetailsDto>> GetAllJobsAccepted()
         {
-            var jobList = _repository.GetAllJobsAccepted();
+            try
+            {
+                var jobList = _repository.GetAllJobsAccepted();
 
-            return Ok(jobList);
+                if (jobList == null)
+                {
+                    return NoContent();
+                }
+
+                return Ok(jobList);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
 
         }
 
         [HttpGet("{id}")]
         public ActionResult<Jobs> GetJobById(int id)
         {
-            var job = _repository.GetJobsById(id);
+            try
+            {
+                var job = _repository.GetJobsById(id);
 
-            return Ok(_mapper.Map<JobDescriptionDto>(job));
+                if (job == null)
+                {
+                    return NoContent();
+                }
+
+                return Ok(_mapper.Map<JobDescriptionDto>(job));
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+
         }
 
         [HttpPatch("{id}")]
         public ActionResult UpdateContract(int id, JsonPatchDocument<JobDescriptionDto> patchDoc)
         {
-            var job = _repository.GetJobsById(id);
-            if (job == null)
+            try
             {
-                return NotFound();
-            }
-            var jobToPatch = _mapper.Map<JobDescriptionDto>(job);
-            patchDoc.ApplyTo(jobToPatch, ModelState);
+                var job = _repository.GetJobsById(id);
+                if (job == null)
+                {
+                    return NotFound();
+                }
+                var jobToPatch = _mapper.Map<JobDescriptionDto>(job);
+                patchDoc.ApplyTo(jobToPatch, ModelState);
 
-            if (!TryValidateModel(jobToPatch))
+                if (!TryValidateModel(jobToPatch))
+                {
+                    return ValidationProblem(ModelState);
+                }
+
+                _mapper.Map(jobToPatch, job);
+
+                _repository.UpdateJob(job);
+
+                _repository.SaveChanges();
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return ValidationProblem(ModelState);
+                return Problem(ex.Message);
             }
-
-            _mapper.Map(jobToPatch, job);
-
-            _repository.UpdateJob(job);
-
-            _repository.SaveChanges();
-
-            return NoContent();
         }
     }
 }

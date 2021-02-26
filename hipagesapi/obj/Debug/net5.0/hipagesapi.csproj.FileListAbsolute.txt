@@ -35,3 +35,13 @@ D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-ma
 D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\obj\Debug\net5.0\ref\hipagesapi.dll
 D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\obj\Debug\net5.0\hipagesapi.pdb
 D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\obj\Debug\net5.0\hipagesapi.genruntimeconfig.cache
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\MySqlConnector.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Pomelo.JsonObject.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HiPages\tech-test-full-stack-engineer-master\tech-test-full-stack-engineer-master\HiPagesTest\hipagesapi\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll

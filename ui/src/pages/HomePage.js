@@ -30,7 +30,7 @@ class HomePage extends Component {
             <>
                 <div className="App-home" >
                     <Container>
-                        <Tab menu={{ color: "orange", fluid: true, vertical: true, tabular: true }} panes={panes} />
+                        <Tab menu={{ color: "orange", fluid: true, vertical: false, tabular: true }} panes={panes} />
                     </Container>
                 </div>
             </>

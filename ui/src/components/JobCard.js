@@ -9,18 +9,22 @@ class JobCard extends Component {
 
     handleAccept = (id) => {
         console.log(id)
-        
-        axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{ op: "replace", 
-                                 path: "/status", 
-                                 value: "accepted" }]).then((response)=>{console.log(this.props.acceptJob(id))})
+
+        axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{
+            op: "replace",
+            path: "/status",
+            value: "accepted"
+        }]).then((response) => { console.log(this.props.acceptJob(id)) })
     }
 
     handleDecline = (id) => {
         console.log(id)
-        
-        axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{ op: "replace", 
-                                 path: "/status", 
-                                 value: "declined" }]).then((response)=>{console.log(this.props.declineJob(id))})
+
+        axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{
+            op: "replace",
+            path: "/status",
+            value: "declined"
+        }]).then((response) => { console.log(this.props.declineJob(id)) })
     }
 
     render() {
@@ -41,13 +45,13 @@ class JobCard extends Component {
                                         <Button circular color="orange" disabled>{item.contact_name.substring(0, 1)}</Button>
                                     </Grid.Column>
                                     <Grid.Column width={5}>
-                                    {item.contact_name}
-                                
-                                <br />
-                                {item.updated_at}
+                                        {item.contact_name}
+
+                                        <br />
+                                        {item.updated_at}
                                     </Grid.Column>
                                 </Grid>
-                                
+
                                 <Divider />
                                 <Grid columns={3}>
                                     <Grid.Row>

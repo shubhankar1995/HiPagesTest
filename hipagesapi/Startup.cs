@@ -13,6 +13,8 @@ namespace hipagesapi
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,11 +28,12 @@ namespace hipagesapi
             // Add CORS settings
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("*");
-                    });
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:3000",
+                                                          "http://localhost:3001");
+                                  });
             });
 
             // Create the Database connection
@@ -69,7 +72,7 @@ namespace hipagesapi
             app.UseRouting();
 
             // Add CORS settings
-            app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Segment, Divider, Icon, Grid } from 'semantic-ui-react'
 import _ from 'lodash'
 import { connect } from 'react-redux';
-import {acceptJob, declineJob} from './../actions/JobAction';
+import {acceptJob, declineJob, loadJobs, loadAcceptedJobs} from './../actions/JobAction';
 
 class JobCard extends Component {
 
@@ -58,7 +58,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         acceptJob : (id) => {dispatch(acceptJob(id))},
-        declineJob : (id) => {dispatch(declineJob(id))}
+        declineJob : (id) => {dispatch(declineJob(id))},
+        loadJobs : (data) => {dispatch(loadJobs(data))},
+        loadAcceptedJobs : (data) => {dispatch(loadAcceptedJobs(data))}
     }
 }
 

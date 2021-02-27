@@ -1,0 +1,29 @@
+.nav{
+    background-color: #282c34;
+}
+
+.admin{
+    margin-top: 20px!important;
+    margin-right: 5em!important;
+}
+
+
+.logo {
+    flex: none;
+    font-size: 4.5em;
+    text-decoration: none;
+    
+    margin-left: 2em;
+    line-height: normal;
+  }
+.logo-name {
+    font-family: "chiller";
+    font-weight: bold;
+    font-variant-ligatures: no-common-ligatures;
+    -webkit-font-variant-ligatures: no-common-ligatures;
+
+  }
+
+.grey-color {
+    color: #868e96;
+  }

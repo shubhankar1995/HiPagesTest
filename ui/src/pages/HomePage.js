@@ -3,6 +3,7 @@ import JobCard from './../components/JobCard';
 import AcceptedJobCard from './../components/AcceptedJobCard'
 import { Container, Button, Card, Image, Tab } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import './home.css';
 
 class HomePage extends Component {
     render() {
@@ -14,9 +15,9 @@ class HomePage extends Component {
 
         return (
             <>
-                <div className="App-home">
+                <div className="App-home" >
                     <Container>
-                        <Tab panes={panes} />
+                        <Tab menu={{ color: "orange", fluid: true, vertical: true, tabular: true }} panes={panes} />
                     </Container>
 
 

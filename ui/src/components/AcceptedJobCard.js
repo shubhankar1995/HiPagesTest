@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Segment, Divider, Icon, Grid } from 'semantic-ui-react'
+import { Button, Segment, Divider, Icon, Grid, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 
 class AcceptedJobCard extends Component {
@@ -8,6 +8,13 @@ class AcceptedJobCard extends Component {
     return(
         <>
         {
+            (this.props.acceptJobs.length === 0) ?
+            <Message
+                icon='inbox'
+                header="You haven't accepted any jobs yet!"
+                content='Click on invited tab and start accepting new invitations.'
+            />
+            :
             this.props.acceptJobs.map((item) =>
             <Segment>
                 {item.contact_name}

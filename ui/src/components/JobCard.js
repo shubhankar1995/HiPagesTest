@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Segment, Divider, Icon, Grid } from 'semantic-ui-react'
+import { Button, Segment, Divider, Icon, Grid, Message } from 'semantic-ui-react'
 import _ from 'lodash'
 import { connect } from 'react-redux';
 import {acceptJob, declineJob, loadJobs, loadAcceptedJobs} from './../actions/JobAction';
@@ -20,6 +20,13 @@ class JobCard extends Component {
         return(
             <>
             {
+                (this.props.avlJobs.length === 0) ?
+                <Message
+                    icon='inbox'
+                    header='You have no new Invitations'
+                    content='Hang in there and you will soon receive invitations'
+                />
+                :
                 this.props.avlJobs.map((item) =>
                     <Segment>
                         {item.contact_name}

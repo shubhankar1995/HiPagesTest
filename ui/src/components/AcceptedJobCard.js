@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Segment, Divider, Icon, Grid, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 
+
+// This class renders all the jobs which have been accepted
 class AcceptedJobCard extends Component {
 
     render() {
@@ -55,6 +57,7 @@ class AcceptedJobCard extends Component {
     }
 };
 
+// Map the state to the application properties
 const mapStateToProps = (state) => {
     console.log(state)
     return {
@@ -63,4 +66,5 @@ const mapStateToProps = (state) => {
     }
 }
 
+// Connect the state with the class
 export default connect(mapStateToProps)(AcceptedJobCard)

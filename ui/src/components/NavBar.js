@@ -1,8 +1,7 @@
 import React from 'react';
 import "./NavBar.css";
-import { Button } from 'semantic-ui-react'
 
-
+// This component is created to act as a navigation bar
 const NavBar = () => {
 
 

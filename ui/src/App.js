@@ -8,6 +8,9 @@ import {
 import HomePage from './pages/HomePage';
 import NavBar from './components/NavBar';
 
+// All the url mappings are defined in this class 
+
+
 class App extends Component {
   render() {
     return (

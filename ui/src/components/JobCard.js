@@ -5,11 +5,15 @@ import { connect } from 'react-redux';
 import { acceptJob, declineJob, loadJobs, loadAcceptedJobs } from './../actions/JobAction';
 import axios from 'axios';
 
+// This class renders all the jobs which are available
 class JobCard extends Component {
 
+    // Function which takes the job id as the parameter
+    // and performs an update operation on the state using reducer
+    // to mark the job as accepted
     handleAccept = (id) => {
-        console.log(id)
 
+        // Send PATCH request for changing status from new to accepted
         axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{
             op: "replace",
             path: "/status",
@@ -17,9 +21,12 @@ class JobCard extends Component {
         }]).then((response) => { console.log(this.props.acceptJob(id)) })
     }
 
+    // Function which takes the job id as the parameter
+    // and performs an update operation on the state using reducer
+    // to mark the job as declined
     handleDecline = (id) => {
-        console.log(id)
-
+        
+        // Send PATCH request for changing status from new to declined
         axios.patch(`https://localhost:5001/api/v1/jobs/UpdateContract/${id}`, [{
             op: "replace",
             path: "/status",
@@ -74,6 +81,7 @@ class JobCard extends Component {
     }
 };
 
+// Map the state to the application properties
 const mapStateToProps = (state) => {
     console.log(state)
     return {
@@ -82,6 +90,7 @@ const mapStateToProps = (state) => {
     }
 }
 
+// Map the dispatch function to the application properties
 const mapDispatchToProps = (dispatch) => {
     return {
         acceptJob: (id) => { dispatch(acceptJob(id)) },
@@ -91,4 +100,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+// Connect the state and dispach with the class
 export default connect(mapStateToProps, mapDispatchToProps)(JobCard);

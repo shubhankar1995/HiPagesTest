@@ -31,8 +31,7 @@ namespace hipagesapi
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("http://localhost:3000",
-                                                          "http://localhost:3001").AllowAnyMethod().AllowAnyHeader();
+                                      builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                                   });
             });
 

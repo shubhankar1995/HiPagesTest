@@ -1,13 +1,13 @@
 // Set the initial state
 const initState = {
-    avlJobs : [],
-    acceptJobs : []
+    avlJobs: [],
+    acceptJobs: []
 }
 
 // Function that dteermines the change to the application
 const jobReducer = (state = initState, action) => {
     // If the job is accepted
-    if (action.type === 'ACCEPT_JOB'){
+    if (action.type === 'ACCEPT_JOB') {
 
         // Filter the availible job state to get all ids except for the one accepted
         let newAvlJobs = state.avlJobs.filter(job => {
@@ -21,35 +21,35 @@ const jobReducer = (state = initState, action) => {
         state.acceptJobs.push(tmpAvlJobs[0])
         return {
             ...state,
-            avlJobs : newAvlJobs
+            avlJobs: newAvlJobs
         }
     }
 
     // If the job is declined
-    if (action.type === 'DECLINE_JOB'){
+    if (action.type === 'DECLINE_JOB') {
         // Filter the availible job state to get all ids except for the one declined
         let newAvlJobs = state.avlJobs.filter(job => {
             return action.id !== job.id
         });
         return {
             ...state,
-            avlJobs : newAvlJobs
+            avlJobs: newAvlJobs
         }
     }
 
     // Load the job invitations
-    if (action.type === 'LOAD_JOB'){
-        return{
+    if (action.type === 'LOAD_JOB') {
+        return {
             ...state,
-            avlJobs : action.data
+            avlJobs: action.data
         }
     }
 
     // Load the accepted jobs
-    if (action.type === 'LOAD_ACC_JOB'){
-        return{
+    if (action.type === 'LOAD_ACC_JOB') {
+        return {
             ...state,
-            acceptJobs : action.data
+            acceptJobs: action.data
         }
     }
     return state;

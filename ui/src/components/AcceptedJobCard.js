@@ -27,7 +27,7 @@ class AcceptedJobCard extends Component {
                                         {item.contact_name}
 
                                         <br />
-                                        {item.updated_at}
+                                        {(new Date(item.updated_at)).toUTCString()}
                                     </Grid.Column>
                                 </Grid>
                                 <Divider />

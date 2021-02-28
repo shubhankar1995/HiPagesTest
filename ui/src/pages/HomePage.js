@@ -5,7 +5,7 @@ import { Container, Tab } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import './home.css';
 import axios from 'axios';
-import {acceptJob, declineJob, loadJobs, loadAcceptedJobs} from './../actions/JobAction';
+import { acceptJob, declineJob, loadJobs, loadAcceptedJobs } from './../actions/JobAction';
 
 // The class represents the home page of the application
 class HomePage extends Component {
@@ -54,8 +54,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         acceptJob: (id) => { dispatch(acceptJob(id)) },
         declineJob: (id) => { dispatch(declineJob(id)) },
-        loadJobs : (data) => {dispatch(loadJobs(data))},
-        loadAcceptedJobs : (data) => {dispatch(loadAcceptedJobs(data))}
+        loadJobs: (data) => { dispatch(loadJobs(data)) },
+        loadAcceptedJobs: (data) => { dispatch(loadAcceptedJobs(data)) }
     }
 }
 

@@ -42,7 +42,7 @@ namespace hipagesapi.Data
                                   Price = j.Price,
                                   Description = j.Description,
                                   Category = c.Name,
-                                  Updated_at = j.Updated_at
+                                  Created_at = j.Created_at
                               });
 
             return availableJobs;
@@ -67,7 +67,7 @@ namespace hipagesapi.Data
                                   Price = j.Price,
                                   Description = j.Description,
                                   Category = c.Name,
-                                  Updated_at = j.Updated_at
+                                  Created_at = j.Created_at
                               });
 
             return acceptedJobs;

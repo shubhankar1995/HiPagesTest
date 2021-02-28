@@ -29,7 +29,7 @@ namespace hipagesapi.Models
 
         public string Description { get; set; }
 
-        public DateTime Updated_at { get; set; }
+        public DateTime Created_at { get; set; }
 
     }
 }
